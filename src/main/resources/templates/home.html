@@ -7,7 +7,13 @@
 </head>
 <body>
     <h1>Home</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur cupiditate deserunt dolore doloribus earum eveniet, in laudantium nam, odit quidem quos sequi! Deleniti distinctio enim minima qui quisquam temporibus ullam?</p>
-    <img th:src="@{/gifs/robot1.gif}" alt="robot1" />
+    <p>All GIFS</p>
+    <ul th:each="gif : ${gifs}">
+        <li>
+            <a th:href="@{'/gif/' + ${gif.name}}">
+                <img th:src="@{'/gifs/' + ${gif.name} + '.gif'}" th:alt="${gif.name}" />
+            </a>
+        </li>
+    </ul>
 </body>
 </html>
