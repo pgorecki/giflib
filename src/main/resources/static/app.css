@@ -9,3 +9,26 @@ h1 {
     background-color: #896bb3;
     color: #fff;
 }
+
+.favourite {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+}
+
+.mark {
+    background-color: transparent;
+}
+
+.unmark {
+    background-color: yellow;
+}
+
+.gif-details {
+    position: relative;
+    width: 200px;
+}

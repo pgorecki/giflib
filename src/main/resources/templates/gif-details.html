@@ -6,10 +6,14 @@
     <link rel="stylesheet" th:href="@{/app.css}" />
 </head>
 <body>
-    <h1>Some awesome GIF</h1>
+    <h1 th:text="${gif.name}"></h1>
     <div class="gif-details">
         <img th:src="@{'/gifs/' + ${gif.name} + '.gif'}" alt="gif" />
-        <a href="#" class="mark favourite"></a>
+        <a href="#" th:class="(${gif.favourite}? 'unmark':'mark') + ' favourite'"></a>
+    </div>
+    <div>
+        <p>Uploaded by <span th:text="${gif.username}"></span> on <span th:text="${gif.dateUploaded}"></span></p>
+        <p>Share: <span th:text="'http://gif.ly/' + ${gif.name}"></span> </p>
     </div>
 </body>
 </html>
