@@ -1,4 +1,4 @@
-package com.ermlab.giflib.controller;
+package com.pgorecki.giflib.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

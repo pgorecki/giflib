@@ -1,4 +1,4 @@
-package com.ermlab.giflib;
+package com.pgorecki.giflib;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
