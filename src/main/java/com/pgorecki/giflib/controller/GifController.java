@@ -1,14 +1,19 @@
 package com.pgorecki.giflib.controller;
 
+import com.pgorecki.giflib.data.GifRepository;
 import com.pgorecki.giflib.model.Gif;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.time.LocalDate;
-
 @Controller
 public class GifController {
+    // GifRepository is injected via DI when GifController is created
+    // Note that GifRepository must be decorated as a component to be injectable
+    @Autowired
+    private GifRepository gifRepository;
+
     @RequestMapping("/")
     public String listGifs() {
         return "home";
@@ -16,7 +21,7 @@ public class GifController {
 
     @RequestMapping("/gif")
     public String gifDetails(ModelMap modelMap) {
-        Gif gif = new Gif("robot2", LocalDate.of(2015, 2, 13), "John Doe", true);
+        Gif gif = gifRepository.findByName("robot1");
         modelMap.put("gif", gif);
         return "gif-details";
     }
